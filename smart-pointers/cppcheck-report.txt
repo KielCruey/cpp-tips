@@ -1,0 +1,23 @@
+dangling-pointer\dangling-pointer.cpp:9:5: warning: %ld in format string (no. 1) requires 'long' but the argument type is 'signed int'. [invalidPrintfArgType_sint]
+    fprintf(stdout, "Value: %ld\n", *pointer);
+    ^
+dangling-pointer\dangling-pointer.cpp:10:5: warning: %ld in format string (no. 1) requires 'long' but the argument type is 'signed int *'. [invalidPrintfArgType_sint]
+    fprintf(stdout, "Value: %ld\n", dangling);
+    ^
+dangling-pointer\dangling-pointer.cpp:16:5: warning: %ld in format string (no. 1) requires 'long' but the argument type is 'signed int'. [invalidPrintfArgType_sint]
+    fprintf(stdout, "Value: %ld\n", *pointer);
+    ^
+dangling-pointer\dangling-pointer.cpp:17:5: warning: %ld in format string (no. 1) requires 'long' but the argument type is 'signed int *'. [invalidPrintfArgType_sint]
+    fprintf(stdout, "Value: %ld\n", dangling);
+    ^
+dangling-pointer\dangling-pointer.cpp:16:38: error: Dereferencing 'pointer' after it is deallocated / released [deallocuse]
+    fprintf(stdout, "Value: %ld\n", *pointer);
+                                     ^
+dangling-pointer\dangling-pointer.cpp:4:20: style: Variable 'dangling' can be declared as pointer to const [constVariablePointer]
+    int *pointer, *dangling;
+                   ^
+memory-leak\memory-leak.cpp:9:5: error: Memory leak: value [memleak]
+    return 0;
+    ^
+nofile:0:0: information: Active checkers: 173/975 (use --checkers-report=<filename> to see details) [checkersReport]
+
